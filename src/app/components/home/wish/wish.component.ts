@@ -97,7 +97,7 @@ export class WishComponent {
     openToast() {
         try {
             this.toastr.success(
-                'Tuấn Huyền cảm ơn lời chúc của bạn ạ',
+                'Hoà Huyền cảm ơn lời chúc của bạn ạ',
                 'Gửi lời chúc thành công!',
                 {
                     progressBar: true,

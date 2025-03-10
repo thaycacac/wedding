@@ -32,7 +32,7 @@ export class GalleryComponent {
             let img: PhotosApi = {
                 albumId: 1,
                 id: item,
-                title: 'Ảnh cưới Tuấn Huyền',
+                title: 'Ảnh cưới Hoà Huyền',
                 url: `${this.urlBaseAlbum}/${item}.jpg`,
                 thumbnailUrl: `${this.urlBaseAlbum}/${item}.jpg`
             };

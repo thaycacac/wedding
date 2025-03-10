@@ -10,9 +10,9 @@ export class CalendarService {
     genGoogleCalendarLink(eventData: any) {
         let baseUrl = 'https://calendar.google.com/calendar/u/0/r/eventedit';
 
-        let text = encodeURIComponent('💍Lễ Thành Hôn \n 💞Mạnh Tuấn & Khánh Huyền💞');
+        let text = encodeURIComponent('💍Lễ Thành Hôn \n 💞Ngọc Hoà & Thanh Huyền💞');
         let details = encodeURIComponent(
-            '<h3>💍Lễ Thành Hôn Mạnh Tuấn & Khánh Huyền💍</h3> Sự có mặt của bạn là niềm vinh dự với vợ chồng chúng mình ❤️\nRất hân hạnh được đón tiếp!\n\n📲Liên hệ chú rể: 0377560590\n📲Liên hệ cô dâu: 0353578378\nWebsite: tuanhuyenwedding.info'
+            '<h3>💍Lễ Thành Hôn Ngọc Hoà & Thanh Huyền💍</h3> Sự có mặt của bạn là niềm vinh dự với vợ chồng chúng mình ❤️\nRất hân hạnh được đón tiếp!\n\n📲Liên hệ chú rể: 0377560590\n📲Liên hệ cô dâu: 0353578378\nWebsite: tuanhuyenwedding.info'
         );
         let location = encodeURIComponent(eventData.LOCATION);
         let dates = encodeURIComponent(`${eventData.START_TIME}/${eventData.END_TIME}`);
@@ -24,7 +24,7 @@ export class CalendarService {
 
     downloadICSFile(eventData: any) {
         const icsContent = `BEGIN:VCALENDAR
-PRODID:-//Tuấn Huyền Wedding//tuanhuyenwedding.com//EN
+PRODID:-//Hoà Huyền Wedding//tuanhuyenwedding.com//EN
 VERSION:2.0
 BEGIN:VTIMEZONE
 TZID:Asia/Ho_Chi_Minh
@@ -42,9 +42,9 @@ UID:${eventData.UID}
 SEQUENCE:0
 DTSTART;TZID=Asia/Ho_Chi_Minh:${eventData.START_TIME}
 DTEND;TZID=Asia/Ho_Chi_Minh:${eventData.END_TIME}
-SUMMARY:💍Lễ Thành Hôn\\n💞Mạnh Tuấn & Khánh Huyền💞
-DESCRIPTION:💍Lễ Thành Hôn Mạnh Tuấn & Khánh Huyền💍 \\nSự có mặt của bạn là niềm vinh dự với vợ chồng chúng mình ❤️\\nRất hân hạnh được đón tiếp!\\n\\n📲Liên hệ chú rể: 0377560590\\n📲Liên hệ cô dâu: 0353578378\\nWebsite: tuanhuyenwedding.info
-X-ALT-DESC;FMTTYPE=text/html:Lễ Thành Hôn Mạnh Tuấn & Khánh Huyền
+SUMMARY:💍Lễ Thành Hôn\\n💞Ngọc Hoà & Thanh Huyền💞
+DESCRIPTION:💍Lễ Thành Hôn Ngọc Hoà & Thanh Huyền💍 \\nSự có mặt của bạn là niềm vinh dự với vợ chồng chúng mình ❤️\\nRất hân hạnh được đón tiếp!\\n\\n📲Liên hệ chú rể: 0377560590\\n📲Liên hệ cô dâu: 0353578378\\nWebsite: tuanhuyenwedding.info
+X-ALT-DESC;FMTTYPE=text/html:Lễ Thành Hôn Ngọc Hoà & Thanh Huyền
 LOCATION:📍${eventData.LOCATION}
 BEGIN:VALARM
 TRIGGER:-P1D
