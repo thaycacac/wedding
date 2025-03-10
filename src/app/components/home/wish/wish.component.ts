@@ -23,12 +23,7 @@ export class WishComponent {
     message!: FormControl;
     wishForm!: FormGroup;
 
-    constructor(
-        private firestoreService: FirestoreWishService,
-        private toastr: ToastrService
-    ) {
-
-    }
+    constructor(private firestoreService: FirestoreWishService, private toastr: ToastrService) {}
 
     ngOnInit(): void {
         this.loadItems();
@@ -73,7 +68,7 @@ export class WishComponent {
         let formData = this.wishForm.value;
         if (!this.isSuccessData(formData)) {
             return;
-        };
+        }
 
         let messageWish = formData.message.trim();
         if (!_.isEmpty(messageWish)) {
@@ -96,20 +91,20 @@ export class WishComponent {
 
     openToast() {
         try {
-            this.toastr.success(
-                'Hoà Huyền cảm ơn lời chúc của bạn ạ',
-                'Gửi lời chúc thành công!',
-                {
-                    progressBar: true,
-                    progressAnimation: 'decreasing'
-                }
-            );
+            this.toastr.success('Hoà Huyền cảm ơn lời chúc của bạn ạ', 'Gửi lời chúc thành công!', {
+                progressBar: true,
+                progressAnimation: 'decreasing'
+            });
         } catch (err) {
             console.log(err);
         }
     }
 
-    formatDateTime(originalDate : string) {
-        return moment(originalDate, 'YYYY/MM/DD HH:mm:ss').format('DD/MM/YYYY HH:mm:ss');
+    formatDateTime(originalDate: string) {
+        const date = moment(originalDate, 'YYYY/MM/DD HH:mm:ss');
+        if (date.year() < 2025) {
+            return '11/03/2025';
+        }
+        return date.format('DD/MM/YYYY HH:mm:ss');
     }
 }
